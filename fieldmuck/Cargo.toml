@@ -1,0 +1,13 @@
+[package]
+name = "fieldmuck"
+version = "0.0.0"
+edition = "2024"
+rust-version = "1.85.1"
+authors = ["Marcel Lambert <marcel_lambert@ymail.com>"]
+license = "MIT OR Apache-2.0"
+description = "Build companion types of a struct, field by field: partials, patches, filters and more."
+keywords = ["derive", "fields", "partial", "patch", "filter"]
+categories = ["rust-patterns", "data-structures"]
+readme = "README.md"
+
+[dependencies]
