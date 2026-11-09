@@ -9,6 +9,8 @@ description = "Derive macros for fieldmuck."
 keywords = ["derive", "fields", "partial", "patch", "filter"]
 categories = ["rust-patterns", "data-structures"]
 readme = "README.md"
+repository = "https://github.com/Fice/partly"
+homepage = "https://github.com/Fice/partly"
 
 [lib]
 proc-macro = true
