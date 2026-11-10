@@ -1,0 +1,12 @@
+[package]
+name = "fieldmuck-filter-sql"
+version = "0.0.0"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "Turns fieldmuck filters into SQL conditions."
+
+[dependencies]
+fieldmuck = { path = "../../fieldmuck" }
+fieldmuck-filter = { path = "../filter" }

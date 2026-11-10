@@ -1,0 +1,12 @@
+[package]
+name = "partly-fixtures-basic"
+version = "0.0.0"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "Hand-written output of the future derive macro, and the tests that use it."
+
+[dependencies]
+fieldmuck = { path = "../../fieldmuck" }
+partly = { path = "../..", features = ["dynamic", "patches"] }

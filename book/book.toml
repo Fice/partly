@@ -1,0 +1,8 @@
+[book]
+title = "Partly"
+authors = ["Marcel Lambert"]
+language = "en"
+
+[build]
+# Fail on links to missing pages instead of silently creating them.
+create-missing = false

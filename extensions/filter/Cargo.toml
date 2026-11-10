@@ -1,0 +1,11 @@
+[package]
+name = "fieldmuck-filter"
+version = "0.0.0"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "Filters for any fieldmuck shape. Each field gets the filter of its type."
+
+[dependencies]
+fieldmuck = { path = "../../fieldmuck" }

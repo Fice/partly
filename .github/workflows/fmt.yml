@@ -1,0 +1,29 @@
+name: Format
+
+on:
+  pull_request:
+    paths: &paths
+      - "**.rs"
+      - rustfmt.toml
+      - .github/workflows/fmt.yml
+  push:
+    branches: [main]
+    paths: *paths
+
+permissions:
+  contents: read
+
+jobs:
+  rustfmt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # rustfmt.toml uses nightly-only options. The nightly is pinned so that
+      # formatting only changes when this date is bumped.
+      - uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8 # v1
+        with:
+          toolchain: nightly-2026-07-11
+          components: rustfmt
+      - run: cargo fmt --all --check

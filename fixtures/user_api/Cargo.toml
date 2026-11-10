@@ -1,0 +1,12 @@
+[package]
+name = "partly-fixtures-user-api"
+version = "0.0.0"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "Real-world scenarios written against the partly API."
+
+[dependencies]
+partly = { path = "../..", features = ["dynamic", "patches"] }
+partly-fixtures-basic = { path = "../basic" }

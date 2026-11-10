@@ -1,0 +1,29 @@
+name: Dependency policy
+
+on:
+  pull_request:
+    paths: &paths
+      - Cargo.toml
+      - Cargo.lock
+      - deny.toml
+      - .github/workflows/deny.yml
+  push:
+    branches: [main]
+    paths: *paths
+
+permissions:
+  contents: read
+
+jobs:
+  # Advisories are checked separately in security.yml: a new advisory should not
+  # turn an unrelated PR red.
+  cargo-deny:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: taiki-e/install-action@c509219cf42fba86913069efd0ade2458c59337b # v2
+        with:
+          tool: cargo-deny@0.20.2
+      - run: cargo deny --locked check licenses bans sources

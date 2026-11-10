@@ -1,0 +1,16 @@
+[package]
+name = "fieldmuck-fixtures"
+version = "0.0.0"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+description = "Hand-written output of the future #[derive(Muck)], and tests of the extensions on it."
+
+[dependencies]
+fieldmuck = { path = "../../fieldmuck" }
+
+[dev-dependencies]
+fieldmuck-dirty = { path = "../../extensions/dirty" }
+fieldmuck-filter = { path = "../../extensions/filter" }
+fieldmuck-filter-sql = { path = "../../extensions/filter-sql" }

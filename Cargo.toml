@@ -1,0 +1,43 @@
+[workspace]
+members = [
+    ".",
+    "fieldmuck",
+    "fieldmuck-derive",
+    "extensions/*",
+    "fixtures/*",
+]
+# Plain `cargo test` and `cargo clippy`, as run by CI, must cover the fixtures.
+default-members = [
+    ".",
+    "fieldmuck",
+    "fieldmuck-derive",
+    "extensions/*",
+    "fixtures/*",
+]
+
+[workspace.package]
+edition = "2024"
+rust-version = "1.85.1"
+license = "MIT OR Apache-2.0"
+
+[package]
+name = "partly"
+version = "0.1.0"
+edition.workspace = true
+authors = ["Marcel Lambert <marcel_lambert@ymail.com>"]
+rust-version.workspace = true
+license.workspace = true
+
+[features]
+## Generate partials checked at runtime.
+dynamic = []
+## Generate partials checked at compile time.
+compile-time = []
+
+## Generate patches, which record the old and new value of each changed field.
+patches = []
+
+
+[dependencies]
+document-features = "0.2.12"
+fieldmuck = { path = "fieldmuck", version = "0.0.0" }
